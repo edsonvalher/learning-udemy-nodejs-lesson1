@@ -1,12 +1,16 @@
 
 const fs = require('fs')
 
-const crearArchivo = (base = 1) => {
+const crearArchivo = (base = 1, lista = false) => {
     return new Promise((resolve, reject) => {
         let salida = ''
         for (let index = 1; index < 11; index++) {
             salida += `${base} x ${index} = ${base * index} \n`
         }
+        if (lista) {
+            console.log(salida)
+        }
+
         fs.writeFile(`tabla-${base}.txt`, salida, (err) => {
             if (err) throw reject(err)
             resolve(`tabla-${base}.txt`)
