@@ -10,6 +10,11 @@ const argv = require('yargs')
         demandOption: true,
         default: false,
         describe: 'Muestra la información listada de la tabla'
+    }).option('h', {
+        alias: 'hasta',
+        type: 'number',
+        demandOption: true,
+        describe: 'Limite de multiplicación'
     })
     .check((argv, options) => {
         if (isNaN(argv.b)) {

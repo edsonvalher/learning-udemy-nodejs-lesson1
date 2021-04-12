@@ -2,11 +2,13 @@
 const fs = require('fs')
 const colors = require('colors')
 
-const crearArchivo = (base = 1, lista = false) => {
+const crearArchivo = (base = 1, lista = false, hasta = 11) => {
     return new Promise((resolve, reject) => {
         let salida = ''
-        for (let index = 1; index < 11; index++) {
+        let consola = ''
+        for (let index = 1; index < hasta + 1; index++) {
             salida += `${colors.green(base)} ${colors.yellow('x')} ${colors.green(index)} ${colors.america('=')} ${colors.magenta(base * index)} \n`
+            consola += `${base} x ${index} = ${base * index} \n`
         }
         if (lista) {
             console.log('==========================='.green)
@@ -15,7 +17,7 @@ const crearArchivo = (base = 1, lista = false) => {
             console.log(salida)
         }
 
-        fs.writeFile(`tabla-${base}.txt`, salida, (err) => {
+        fs.writeFile(`tabla-${base}.txt`, consola, (err) => {
             if (err) throw reject(err)
             resolve(`tabla-${base}.txt`)
         })

@@ -16,7 +16,7 @@ console.log(base)
 node .\app.js  -b 2 -l
 */
 
-crearArchivo(argv.b, argv.l).then(archivo => {
+crearArchivo(argv.b, argv.l, argv.h).then(archivo => {
     console.log(`el archivo ${archivo} ha sido creado`)
 }).catch(err => {
     console.log(`hubo un error ${err}`)
