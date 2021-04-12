@@ -17,7 +17,7 @@ const crearArchivo = (base = 1, lista = false, hasta = 11) => {
             console.log(salida)
         }
 
-        fs.writeFile(`tabla-${base}.txt`, consola, (err) => {
+        fs.writeFile(`./salida/tabla-${base}.txt`, consola, (err) => {
             if (err) throw reject(err)
             resolve(`tabla-${base}.txt`)
         })
