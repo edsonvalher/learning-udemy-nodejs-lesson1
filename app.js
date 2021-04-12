@@ -21,5 +21,3 @@ crearArchivo(argv.b, argv.l).then(archivo => {
 }).catch(err => {
     console.log(`hubo un error ${err}`)
 })
-
-console.log('base:yarg', argv.base)
